@@ -8,7 +8,7 @@ type OpeningHourProps = {
 
 const formatTime = (time: string): string => {
   const isNextDay = time.startsWith('+')
-  const rawTime = isNextDay ? '0000' : time // Treat "+" as midnight
+  const rawTime = isNextDay ? time.slice(1) : time // Treat "+" as midnight
   const hours = parseInt(rawTime.slice(0, 2), 10)
   const minutes = rawTime.slice(2)
   const period = hours >= 12 ? 'PM' : 'AM'

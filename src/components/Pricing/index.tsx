@@ -5,6 +5,8 @@ type PricingProps = {
   value: number
 }
 
+// Assume the value starts form 1 to 4
+
 const Pricing = ({ value }: PricingProps) => {
   return (
     <Stack direction="horizontal" gap={1}>
