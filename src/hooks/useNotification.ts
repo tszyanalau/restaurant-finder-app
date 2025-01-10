@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'
-import { nanoid } from 'nanoid'
+import { nanoid } from '@reduxjs/toolkit'
 import { addNotification, showNotification } from '../reducers/global'
 import { NotificationType } from '../types/store'
 
