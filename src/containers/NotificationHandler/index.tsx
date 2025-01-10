@@ -1,15 +1,16 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { ToastContainer } from 'react-bootstrap'
-import { StoreState } from '../../types/store'
+import { Variant } from 'react-bootstrap/esm/types'
+import { StoreState, NotificationType } from '../../types/store'
 import { removeNotification } from '../../reducers/global'
 import Notification from '../../components/Notification'
 
-const mapTypeToVariant = {
+const mapTypeToVariant: Record<NotificationType, Variant> = {
   info: 'white',
   error: 'danger',
 }
 
-const mapTypeToTitle = {
+const mapTypeToTitle: Record<NotificationType, string> = {
   info: 'Info',
   error: 'Error',
 }
