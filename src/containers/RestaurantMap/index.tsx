@@ -67,7 +67,7 @@ const RestaurantMap = () => {
   }
 
   return (
-    <Stack as={Container} gap={2} className="mt-2">
+    <Stack as={Container} gap={2} className="page-container">
       <Stack gap={2}>
         <h3 className="mb-0">{import.meta.env.VITE_APP_NAME}</h3>
         <Stack direction="horizontal" className="flex-column flex-md-row">

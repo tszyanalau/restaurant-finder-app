@@ -26,7 +26,7 @@ const Restaurant = () => {
   if (!data) return null
 
   return (
-    <Stack as={Container} gap={3} className="mt-2">
+    <Stack as={Container} gap={3} className="page-container">
       <Stack>
         <h2>{data.name}</h2>
         <Stack direction="horizontal" gap={2}>
