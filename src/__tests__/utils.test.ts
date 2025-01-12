@@ -25,6 +25,6 @@ describe('formatOpeningHour', () => {
 
 describe('formatDateTime', () => {
   it('should format date and time correctly', () => {
-    expect(formatDateTime('2024-06-19T11:16:02.000Z')).toBe('Jun 19 2024, 11:16 AM')
+    expect(formatDateTime('2024-06-19T11:16:02.000Z')).toBe('Jun 19 2024, 8:16 PM')
   })
 })

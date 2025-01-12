@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment from 'moment-timezone'
 
 export const formatOpeningHour = (time: string): string => {
   const isNextDay = time.startsWith('+')
@@ -8,5 +8,7 @@ export const formatOpeningHour = (time: string): string => {
 }
 
 export const formatDateTime = (timestamp: string): string => {
-  return moment.utc(timestamp).format('MMM D YYYY, h:mm A')
+  return moment(timestamp)
+    .tz(import.meta.env.VITE_TIMEZONE)
+    .format('MMM D YYYY, h:mm A')
 }

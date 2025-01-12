@@ -12,6 +12,7 @@ interface ImportMetaEnv {
   readonly VITE_API_LIMIT: number
   readonly VITE_FS_API_KEY: string
   readonly VITE_GOOGLE_API_KEY: string
+  readonly VITE_TIMEZONE: string
 }
 
 interface ImportMeta {
