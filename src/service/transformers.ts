@@ -18,7 +18,7 @@ export const transformPlaceDetails = (response: PlaceDetailsApiResponse): Restau
     latitude: response.geocodes.main.latitude,
     longitude: response.geocodes.main.longitude,
     rating: response.rating ? Math.round((response.rating / 2) * 10) / 10 : undefined,
-    totalRating: response.stats?.total_ratings,
+    totalReviews: response.stats?.total_tips,
     pricing: response.price,
     category: response.categories.map(({ short_name }) => short_name).join(', '),
     open: response.hours?.open_now,

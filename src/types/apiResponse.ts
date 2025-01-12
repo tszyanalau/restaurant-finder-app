@@ -53,6 +53,6 @@ export type PlaceDetailsApiResponse = {
   menu?: string
   website?: string
   stats?: {
-    total_ratings: number
+    total_tips: number
   }
 }

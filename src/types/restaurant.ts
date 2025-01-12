@@ -20,7 +20,7 @@ export type OpeningHour = {
 export type RestaurantDetails = {
   name: string
   rating?: number
-  totalRating?: number
+  totalReviews?: number
   pricing?: number
   category: string
   open?: boolean

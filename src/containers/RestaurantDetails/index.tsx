@@ -39,8 +39,8 @@ const Restaurant = () => {
           ) : (
             <div className="text-muted">No rating</div>
           )}
-          {data.totalRating && data.reviews.length > 0 ? (
-            <a href="#review">{data.totalRating} review(s)</a>
+          {data.totalReviews && data.reviews.length > 0 ? (
+            <a href="#review">{data.totalReviews} review(s)</a>
           ) : (
             <div className="text-muted">No reviews</div>
           )}
@@ -112,7 +112,7 @@ const Restaurant = () => {
           )}
         </Stack>
       </Stack>
-      {data.reviews.length > 0 && (
+      {data.totalReviews && data.reviews.length > 0 && (
         <Stack id="review">
           <h4>Review Highlights</h4>
           <Stack>

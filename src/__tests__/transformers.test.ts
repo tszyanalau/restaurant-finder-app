@@ -34,7 +34,7 @@ describe('Transformers', () => {
         name: 'Test Restaurant',
         geocodes: { main: { latitude: 10, longitude: 20 } },
         rating: 8,
-        stats: { total_ratings: 100 },
+        stats: { total_tips: 100 },
         price: 2,
         categories: [{ short_name: 'Italian' }, { short_name: 'Pizza' }],
         hours: {
@@ -68,7 +68,7 @@ describe('Transformers', () => {
         latitude: 10,
         longitude: 20,
         rating: 4.0, // Rounded to half
-        totalRating: 100,
+        totalReviews: 100,
         pricing: 2,
         category: 'Italian, Pizza',
         open: true,
@@ -109,7 +109,7 @@ describe('Transformers', () => {
         latitude: 10,
         longitude: 20,
         rating: undefined,
-        totalRating: undefined,
+        totalReviews: undefined,
         pricing: undefined,
         category: '',
         open: undefined,
