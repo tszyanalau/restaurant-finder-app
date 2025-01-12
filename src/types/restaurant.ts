@@ -33,4 +33,9 @@ export type RestaurantDetails = {
   tel?: string
   menu?: string
   website?: string
+  reviews: {
+    id: string
+    createdAt: string
+    description: string
+  }[]
 }

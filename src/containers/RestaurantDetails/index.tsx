@@ -8,6 +8,7 @@ import Rating from '../../components/Rating'
 import Pricing from '../../components/Pricing'
 import OpeningHours from '../../components/OpeningHours'
 import ExternalLink from '../../components/ExternalLink'
+import Review from '../../components/Review'
 import { DEFAULT_PLACEHOLDER } from '../../constants/common'
 import useNotification from '../../hooks/useNotification'
 
@@ -36,9 +37,13 @@ const Restaurant = () => {
               <div>{data.rating}</div>
             </>
           ) : (
-            'No rating'
+            <div className="text-muted">No rating</div>
           )}
-          <div>{data.totalRating ?? 'No'} review(s)</div>
+          {data.totalRating && data.reviews.length > 0 ? (
+            <a href="#review">{data.totalRating} review(s)</a>
+          ) : (
+            <div className="text-muted">No reviews</div>
+          )}
         </Stack>
         <Stack direction="horizontal" gap={2}>
           {data.pricing && <Pricing value={data.pricing} />}
@@ -107,6 +112,17 @@ const Restaurant = () => {
           )}
         </Stack>
       </Stack>
+      {data.reviews.length > 0 && (
+        <Stack id="review">
+          <h4>Review Highlights</h4>
+          <Stack>
+            {data.reviews.map((review) => (
+              <Review key={review.id} {...review} />
+            ))}
+          </Stack>
+        </Stack>
+        // TODO: view more button
+      )}
     </Stack>
   )
 }

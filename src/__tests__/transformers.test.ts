@@ -1,5 +1,10 @@
 import { transformPlace, transformPlaceDetails } from '../service/transformers'
 import { Place, PlaceDetailsApiResponse } from '../types/apiResponse'
+import { RestaurantDetails } from '../types/restaurant'
+
+vi.mock('@reduxjs/toolkit', () => ({
+  nanoid: vi.fn().mockReturnValue('mock_id'),
+}))
 
 describe('Transformers', () => {
   describe('transformPlace', () => {
@@ -50,9 +55,15 @@ describe('Transformers', () => {
         tel: '123-456-7890',
         menu: 'https://example.com/menu',
         website: 'https://example.com',
+        tips: [
+          {
+            created_at: '2024-06-19T11:16:02.000Z',
+            text: 'Review 1',
+          },
+        ],
       }
 
-      const expected = {
+      const expected: RestaurantDetails = {
         name: 'Test Restaurant',
         latitude: 10,
         longitude: 20,
@@ -73,6 +84,13 @@ describe('Transformers', () => {
         tel: '123-456-7890',
         menu: 'https://example.com/menu',
         website: 'https://example.com',
+        reviews: [
+          {
+            id: 'mock_id',
+            createdAt: '2024-06-19T11:16:02.000Z',
+            description: 'Review 1',
+          },
+        ],
       }
 
       expect(transformPlaceDetails(placeDetails)).toEqual(expected)
@@ -86,7 +104,7 @@ describe('Transformers', () => {
         categories: [],
       }
 
-      const expected = {
+      const expected: RestaurantDetails = {
         name: 'Test Restaurant',
         latitude: 10,
         longitude: 20,
@@ -102,6 +120,7 @@ describe('Transformers', () => {
         tel: undefined,
         menu: undefined,
         website: undefined,
+        reviews: [],
       }
 
       expect(transformPlaceDetails(placeDetails)).toEqual(expected)

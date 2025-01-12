@@ -1,4 +1,4 @@
-import { formatOpeningHour } from '../utils'
+import { formatOpeningHour, formatDateTime } from '../utils'
 
 describe('formatOpeningHour', () => {
   it('should format time correctly for AM times', () => {
@@ -20,5 +20,11 @@ describe('formatOpeningHour', () => {
 
   it('should handle edge cases like 12:00 PM', () => {
     expect(formatOpeningHour('1200')).toBe('12:00 PM')
+  })
+})
+
+describe('formatDateTime', () => {
+  it('should format date and time correctly', () => {
+    expect(formatDateTime('2024-06-19T11:16:02.000Z')).toBe('Jun 19 2024, 11:16 AM')
   })
 })

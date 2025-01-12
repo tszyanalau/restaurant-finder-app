@@ -28,6 +28,7 @@ export type PlaceDetailsApiResponse = {
   categories: {
     short_name: string
   }[]
+  geocodes: Geocodes
   hours?: {
     display: string
     open_now: boolean
@@ -41,11 +42,14 @@ export type PlaceDetailsApiResponse = {
     formatted_address?: string
   }
   name: string
-  geocodes: Geocodes
   photos?: PlacePhoto[]
   price?: number
   rating?: number
   tel?: string
+  tips?: {
+    created_at: string
+    text: string
+  }[]
   menu?: string
   website?: string
   stats?: {

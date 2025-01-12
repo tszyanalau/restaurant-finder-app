@@ -9,7 +9,7 @@ const radius = import.meta.env.VITE_API_RADIUS.toString()
 const limit = import.meta.env.VITE_API_LIMIT.toString()
 const categories = import.meta.env.VITE_API_CATEGORIES // Category ids for restaurant
 const restaurantMapFields = 'fsq_id,name,geocodes,distance'
-const restaurantDetails = 'name,geocodes,location,categories,tel,website,hours,rating,price,menu,photos,stats'
+const restaurantDetails = 'name,geocodes,location,categories,tel,website,hours,rating,price,menu,photos,stats,tips'
 
 export const restaurantApi = createApi({
   reducerPath: 'restaurantApi',

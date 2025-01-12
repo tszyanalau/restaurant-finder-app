@@ -1,3 +1,4 @@
+import { nanoid } from '@reduxjs/toolkit'
 import { Place, PlaceDetailsApiResponse } from '../types/apiResponse'
 import { Restaurant, RestaurantDetails } from '../types/restaurant'
 
@@ -32,5 +33,11 @@ export const transformPlaceDetails = (response: PlaceDetailsApiResponse): Restau
     tel: response.tel,
     menu: response.menu,
     website: response.website,
+    reviews:
+      response.tips?.map(({ created_at, text }) => ({
+        id: nanoid(),
+        createdAt: created_at,
+        description: text,
+      })) || [],
   }
 }
