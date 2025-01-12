@@ -1,21 +1,10 @@
 import Table from 'react-bootstrap/Table'
 import { OpeningHour } from '../../types/restaurant'
 import { DAYS_OF_WEEK } from '../../constants/common'
+import { formatOpeningHour } from '../../utils'
 
 type OpeningHourProps = {
   data: OpeningHour[]
-}
-
-const formatTime = (time: string): string => {
-  const isNextDay = time.startsWith('+')
-  const rawTime = isNextDay ? time.slice(1) : time // Treat "+" as midnight
-  const hours = parseInt(rawTime.slice(0, 2), 10)
-  const minutes = rawTime.slice(2)
-  const period = hours >= 12 ? 'PM' : 'AM'
-  const formattedHours = hours % 12 || 12 // Convert 0 or 12+ hours to 12-hour format
-  const formattedTime = `${formattedHours}:${minutes} ${period}`
-
-  return isNextDay ? `${formattedTime} (Next day)` : formattedTime
 }
 
 const groupByDay = (hour: OpeningHour[]) => {
@@ -41,7 +30,9 @@ const OpeningHours = ({ data }: OpeningHourProps) => {
             <tr key={dayNumber}>
               <th>{dayName}</th>
               <td>
-                {ranges ? ranges.map(({ open, close }) => `${formatTime(open)} - ${formatTime(close)}`).join(', ') : 'Closed'}
+                {ranges
+                  ? ranges.map(({ open, close }) => `${formatOpeningHour(open)} - ${formatOpeningHour(close)}`).join(', ')
+                  : 'Closed'}
               </td>
             </tr>
           )
