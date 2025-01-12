@@ -10,7 +10,7 @@ The **Restaurant Finder App** helps users discover restaurants near Cogent Labs,
 
 ### Key Features:
 
-1. **Random Selection of a Restaurant**: Randomly selects a restaurant within a 1km radius of the Cogent Labs Office (35.6646782,139.7378198).
+1. **Random Selection of a Restaurant**: Randomly selects a restaurant within a 1km radius of the Cogent Labs Office (35.6646942,139.7378198).
 
 2. **Interactive Map View**: Provides a map view displaying the location of the randomly selected restaurant and the Cogent Labs Office.
 
