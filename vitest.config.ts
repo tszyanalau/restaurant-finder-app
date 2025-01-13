@@ -8,6 +8,6 @@ export default defineConfig({
     coverage: {
       enabled: true,
     },
-    include: ['./**/__tests__/**/*.test.ts', './**/*.test.tsx'],
+    include: ['./src/**/*.test.ts', './src/**/*.test.tsx'],
   },
 })
