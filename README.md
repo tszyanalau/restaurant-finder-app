@@ -8,7 +8,7 @@ Customers working at Cogent Labs in Roppongi often face difficulties deciding wh
 
 The **Restaurant Finder App** helps users discover restaurants near Cogent Labs, view detailed information about each restaurant, and display the selected restaurant on a map. The app integrates with the **Foursquare Places API** to fetch restaurant data and uses the **Google Maps API** for map rendering and location visualization.
 
-### Key Features:
+### Key Features
 
 1. **Random Selection of a Restaurant**: Randomly selects a restaurant within a 1km radius of the Cogent Labs Office (35.6646942,139.7378198).
 
@@ -46,7 +46,9 @@ Before running the application, ensure the following:
    ```
 
 3. Add environment variables:
+
    - Create a `.env.local` file and add the following:
+
      ```env
      VITE_FS_API_KEY=your_foursquare_api_key
      VITE_GOOGLE_API_KEY=your_google_maps_api_key
@@ -61,6 +63,23 @@ npm run dev
 ```
 
 Open the app at [http://localhost:5173](http://localhost:5173).
+
+## Development Tools
+
+### **1. Vitest**
+
+- A modern testing framework used for unit testing React components and utilities.
+- Provides fast and reliable test execution.
+
+### **2. ESLint and Prettier**
+
+- **ESLint** enforces consistent code quality.
+- **Prettier** ensures uniform code formatting, reducing friction in collaborative environments.
+
+### **3. Commitlint and lint-staged**
+
+- **Commitlint** enforces meaningful commit messages, aiding in better version control.
+- **lint-staged** runs pre-commit checks on staged files, ensuring only formatted code is committed.
 
 ## Available Scripts
 
@@ -112,21 +131,6 @@ The following scripts are available for development, testing, and building the p
 - Offers better performance than traditional build tools like Webpack.
 - Supports TypeScript out of the box, eliminating additional setup.
 
-### **8. Vitest**
-
-- A modern testing framework used for unit testing React components and utilities.
-- Provides fast and reliable test execution.
-
-### **9. ESLint and Prettier**
-
-- **ESLint** enforces consistent code quality.
-- **Prettier** ensures uniform code formatting, reducing friction in collaborative environments.
-
-### **10. Commitlint and lint-staged**
-
-- **Commitlint** enforces meaningful commit messages, aiding in better version control.
-- **lint-staged** runs pre-commit checks on staged files, ensuring only formatted code is committed.
-
 ## Trade-offs and Decisions
 
 1. **Google Places API vs. Foursquare API**:
@@ -150,6 +154,7 @@ The following scripts are available for development, testing, and building the p
 
 3. **Enhanced Testing**:
 
+   - Add test cases for reducers, and other untested parts of the application to ensure better coverage and reliability.
    - Add integration tests and end-to-end workflows using tools like **Cypress**.
    - Perform cross-browser and cross-device testing to ensure consistent functionality and usability using tools like **Percy**.
 
